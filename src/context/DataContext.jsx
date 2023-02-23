@@ -8,9 +8,11 @@ export const DataContext = createContext();
 // create data reducer function
 const dataReducer = (state, action) => {
   switch (action.type) {
+    // get first 10 ships
     case "FETCH_SHIPS":
       return { ...state, starships: action.payload };
 
+    // increase API param "page"
     case "INCREASE_PAGE":
       if (state.starshipsPage < 4) {
         return { ...state, starshipsPage: state.starshipsPage + 1 };
@@ -18,6 +20,7 @@ const dataReducer = (state, action) => {
         return state;
       }
 
+    // fetch more ships, when clicking "more ships" button
     case "MORE_SHIPS":
       return { ...state, starships: [...state.starships, ...action.payload] };
 

@@ -1,3 +1,3 @@
 export default function StarshipDetails() {
-  return <div>StarshipDetails</div>;
+  return <div className='starship-details container'>StarshipDetails</div>;
 }

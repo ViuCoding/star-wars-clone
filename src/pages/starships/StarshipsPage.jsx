@@ -1,3 +1,9 @@
+import StarshipsList from "../../components/StarshipsList";
+
 export default function StarshipsPage() {
-  return <div>StarshipsPage</div>;
+  return (
+    <div className='starships-page'>
+      <StarshipsList />
+    </div>
+  );
 }
