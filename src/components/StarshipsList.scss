@@ -1,0 +1,15 @@
+@import "../variables";
+
+.starships-list {
+  .starship {
+    display: block;
+    background-color: $secondary;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+
+    .starship-name {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
