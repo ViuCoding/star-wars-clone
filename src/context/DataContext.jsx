@@ -58,7 +58,7 @@ export default function DataProvider({ children }) {
     );
   }, [state.starshipsPage]);
 
-  console.log(state.starshipsPage);
+  //console.log(state.starshipsPage);
 
   return (
     <DataContext.Provider value={{ ...state, dispatch }}>
