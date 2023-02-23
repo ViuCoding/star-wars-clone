@@ -6,7 +6,7 @@ export default function Home() {
   //console.log(starships);
   return (
     <div>
-      <button onClick={() => dispatch({ type: "INCREASE_PAGE" })}>PLUS</button>
+      {/* <button onClick={() => dispatch({ type: "INCREASE_PAGE" })}>PLUS</button> */}
     </div>
   );
 }

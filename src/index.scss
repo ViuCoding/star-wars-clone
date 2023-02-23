@@ -1,7 +1,8 @@
-// GLOBAL
-// GLOBAL
-// GLOBAL
+@import "./variables";
 
+// GLOBAL
+// GLOBAL
+// GLOBAL
 * {
   margin: 0;
   padding: 0;
@@ -16,11 +17,18 @@
 
 a {
   text-decoration: none;
+  color: $main-text;
   transition: all 0.8s ease;
 }
 
 img {
   max-width: 100%;
+}
+
+body {
+  background-color: $primary;
+  color: $main-text;
+  font-family: monospace;
 }
 
 // UTILITY
