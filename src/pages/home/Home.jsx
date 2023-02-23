@@ -1,3 +1,12 @@
+import { useDataContext } from "../../hooks/useDataContext";
+
 export default function Home() {
-  return <div>Home</div>;
+  const { starships, dispatch } = useDataContext();
+
+  console.log(starships);
+  return (
+    <div>
+      <button onClick={() => dispatch({ type: "INCREASE_PAGE" })}>PLUS</button>
+    </div>
+  );
 }
