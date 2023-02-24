@@ -13,7 +13,7 @@ export default function StarshipsList() {
   // extract the ID number from starship.url and use it as route param.
 
   return (
-    <div className='starships-list container'>
+    <div className='starships-list'>
       {loadingAPI && <LoadingSpinner />}
       {starships &&
         starships.map(starship => {
