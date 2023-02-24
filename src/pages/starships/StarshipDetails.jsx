@@ -5,6 +5,9 @@ import defaultSrc from "../../assets/placeholder.jpg";
 // styles
 import "./StarshipDetails.scss";
 
+// components
+import LoadingSpinner from "../../components/LoadingSpinner";
+
 export default function StarshipDetails() {
   const { id } = useParams();
   const {
@@ -17,6 +20,7 @@ export default function StarshipDetails() {
 
   return (
     <div className='starship-details container'>
+      {loading && <LoadingSpinner />}
       {ship && (
         <>
           <div className='starship-card'>

@@ -18,9 +18,13 @@
   flex-direction: column;
 }
 
+.content {
+  padding-bottom: 2rem;
+}
+
 a {
   text-decoration: none;
-  color: $main-text;
+  color: $white;
   transition: all 0.8s ease;
 }
 
@@ -30,7 +34,7 @@ img {
 
 body {
   background-color: $primary;
-  color: $main-text;
+  color: $white;
   font-family: "Poppins", Inter, Avenir, Helvetica, Arial, sans-serif;
 }
 
@@ -50,7 +54,7 @@ body {
   padding: 1rem;
   font-weight: 600;
   background-color: transparent;
-  color: $main-text;
+  color: $white;
   border-radius: 30px;
   border: 2px solid $accent;
 

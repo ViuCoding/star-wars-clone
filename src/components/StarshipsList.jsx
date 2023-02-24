@@ -1,11 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useDataContext } from "../hooks/useDataContext";
+import LoadingSpinner from "./LoadingSpinner";
 
 // styles
 import "./StarshipsList.scss";
 
 export default function StarshipsList() {
-  const { starships, dispatch } = useDataContext();
+  const { starships, loadingAPI, dispatch } = useDataContext();
 
   const navigate = useNavigate();
 
@@ -13,6 +14,7 @@ export default function StarshipsList() {
 
   return (
     <div className='starships-list container'>
+      {loadingAPI && <LoadingSpinner />}
       {starships &&
         starships.map(starship => {
           return (
