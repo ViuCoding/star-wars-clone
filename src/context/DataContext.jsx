@@ -12,7 +12,7 @@ const dataReducer = (state, action) => {
     case "FETCH_SHIPS":
       return { ...state, starships: action.payload };
 
-    // increase API param "page"
+    // increase API query param "page"
     case "INCREASE_PAGE":
       if (state.starshipsPage < 4) {
         return { ...state, starshipsPage: state.starshipsPage + 1 };
@@ -61,7 +61,6 @@ export default function DataProvider({ children }) {
     );
   }, [state.starshipsPage]);
 
-  //console.log(state.starshipsPage);
 
   return (
     <DataContext.Provider value={{ ...state, dispatch }}>

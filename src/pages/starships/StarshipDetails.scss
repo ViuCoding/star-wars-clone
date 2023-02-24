@@ -1,7 +1,40 @@
 @import "../../variables";
 
 .starship-details {
-  .starship-name {
-    text-align: center;
+  .starship-card {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
+      url("../../assets/starnight.jpg") center/cover;
+    padding: 1rem;
+    font-weight: 300;
+
+    .starship-name {
+      text-align: center;
+      font-size: 2.4rem;
+      text-transform: uppercase;
+    }
+
+    .starship-card-container {
+      text-align: center;
+      img {
+        border-bottom: 2px solid $accent;
+      }
+    }
+
+    span {
+      display: inline-block;
+
+      & + span {
+        margin-left: 10px;
+      }
+    }
+
+    .category {
+      color: $accent;
+    }
+
+    .value {
+      font-style: italic;
+      font-weight: 200;
+    }
   }
 }

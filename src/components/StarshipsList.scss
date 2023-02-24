@@ -10,6 +10,13 @@
 
     .starship-name {
       margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .starship-model {
+      font-weight: 200;
+      font-style: italic;
+      color: #ddd;
     }
   }
 }

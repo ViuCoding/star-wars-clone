@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDataContext } from "../hooks/useDataContext";
 
 // styles
@@ -6,6 +6,10 @@ import "./StarshipsList.scss";
 
 export default function StarshipsList() {
   const { starships, dispatch } = useDataContext();
+
+  const navigate = useNavigate();
+
+  // extract the ID number from starship.url and use it as route param.
 
   return (
     <div className='starships-list container'>
@@ -22,11 +26,17 @@ export default function StarshipsList() {
           );
         })}
 
-      <button
-        className='btn'
-        onClick={() => dispatch({ type: "INCREASE_PAGE" })}>
-        LOAR MORE SHIPS
-      </button>
+      {starships.length < 36 ? (
+        <button
+          className='btn'
+          onClick={() => dispatch({ type: "INCREASE_PAGE" })}>
+          LOAD MORE SHIPS
+        </button>
+      ) : (
+        <button className='btn' onClick={() => navigate("/")}>
+          BACK TO HOME PAGE
+        </button>
+      )}
     </div>
   );
 }
