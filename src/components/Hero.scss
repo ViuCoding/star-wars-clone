@@ -43,3 +43,19 @@
     }
   }
 }
+
+// MEDIA QUERIES
+
+@media (min-width: $breakpoint-2) {
+  .overlay {
+    .overlay-content {
+      .content-message {
+        font-size: 1.8rem;
+      }
+
+      .content-text {
+        font-size: 1rem;
+      }
+    }
+  }
+}

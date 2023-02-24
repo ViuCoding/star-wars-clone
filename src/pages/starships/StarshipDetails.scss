@@ -9,7 +9,7 @@
 
     .starship-name {
       text-align: center;
-      font-size: 2.4rem;
+      font-size: 1.5rem;
       text-transform: uppercase;
     }
 
@@ -22,9 +22,10 @@
 
     span {
       display: inline-block;
+      font-size: 0.7rem;
 
       & + span {
-        margin-left: 10px;
+        margin-left: 5px;
       }
     }
 
@@ -35,6 +36,21 @@
     .value {
       font-style: italic;
       font-weight: 200;
+    }
+  }
+}
+
+// MEDIA QUERIES
+
+@media (min-width: $breakpoint-1) {
+  .starship-details {
+    .starship-card {
+      .starship-name {
+        font-size: 2.4rem;
+      }
+      span {
+        font-size: 1rem;
+      }
     }
   }
 }
