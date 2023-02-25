@@ -36,7 +36,7 @@ export default function Home() {
 
       <Promo src={PromoSrc} />
 
-      <h3 className='section-title'>More CloneWars Video Series</h3>
+      <h3 className='section-title'>More CloneWars Content</h3>
 
       <Card src={Poster1} title='Revenge of the Sith' />
       <Card src={Poster2} title='Star Wars: Galaxy of Heroes' />
