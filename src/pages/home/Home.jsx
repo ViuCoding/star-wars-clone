@@ -1,13 +1,17 @@
 // components
 import Hero from "../../components/Hero";
 import Promo from "../../components/Promo";
+import Card from "../../components/Card";
 
 // styles
 import "./Home.scss";
 
-// img
+// images
 import HeroBg2 from "../../assets/bg2.jpg";
 import PromoSrc from "../../assets/gamebg.jpg";
+import Poster1 from "../../assets/poster1.jpg";
+import Poster2 from "../../assets/poster2.jpg";
+import Poster3 from "../../assets/poster3.jpg";
 
 export default function Home() {
   return (
@@ -18,7 +22,7 @@ export default function Home() {
         text='Yoda, Star Wars Episode III: Revenge Of The Sith'
       />
 
-      <p className='home-page-content'>
+      <p className='home-page-text'>
         Welcome to the world of Star Wars and the Clone Wars era! Our Clone Wars
         page, built using React, is the perfect place for fans of the legendary
         franchise to explore the exciting battles and conflicts between the
@@ -31,6 +35,12 @@ export default function Home() {
       </p>
 
       <Promo src={PromoSrc} />
+
+      <h3 className='section-title'>More CloneWars Video Series</h3>
+
+      <Card src={Poster1} title='Revenge of the Sith' />
+      <Card src={Poster2} title='Star Wars: Galaxy of Heroes' />
+      <Card src={Poster3} title='Lego Star Wars: Episode III' />
     </div>
   );
 }

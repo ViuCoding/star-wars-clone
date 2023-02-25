@@ -1,9 +1,16 @@
 @import "../../variables";
 
 .home-page {
-  .home-page-content {
+  .home-page-text {
     font-weight: 200;
     font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-weight: 200;
+    border-bottom: 1px solid $white;
+    margin: 1rem 0;
   }
 }
 
@@ -11,7 +18,7 @@
 
 @media (min-width: $breakpoint-1) {
   .home-page {
-    .home-page-content {
+    .home-page-text {
       font-size: 1rem;
     }
   }

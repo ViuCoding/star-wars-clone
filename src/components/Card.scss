@@ -1,0 +1,53 @@
+@import "../variables";
+
+.card {
+  margin-bottom: 1rem;
+  .card-thumbnail {
+    min-height: 200px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .card-text-content {
+    display: none;
+    background-color: $secondary;
+    padding: 2rem;
+    border-radius: 0 0 20px 20px;
+
+    h4 {
+      font-weight: 300;
+      color: $accent2;
+    }
+    p {
+      font-weight: 200;
+    }
+  }
+}
+
+// MEDIA QUERIES
+
+@media (min-width: $breakpoint-1) {
+  .card {
+    .card-thumbnail {
+      min-height: 350px;
+    }
+
+    .card-text-content {
+      display: block;
+    }
+  }
+}
+@media (min-width: $breakpoint-2) {
+  .card {
+    display: flex;
+
+    .card-thumbnail {
+      width: 50%;
+      border-radius: 20px 0 0 20px;
+    }
+
+    .card-text-content {
+      width: 50%;
+      border-radius: 0 20px 20px 0;
+    }
+  }
+}
