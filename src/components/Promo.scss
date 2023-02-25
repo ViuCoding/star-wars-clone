@@ -1,0 +1,39 @@
+@import "../variables";
+
+.promo {
+  text-align: center;
+  margin: 1rem auto;
+  position: relative;
+
+  button {
+    position: absolute;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    padding: 0.3rem;
+    color: $white;
+    border-radius: 5px;
+    background-color: $accent;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &:hover {
+      background-color: transparent;
+      outline: 2px solid $accent;
+      backdrop-filter: blur(20px);
+    }
+  }
+}
+
+// MEDIA QUERIES
+
+@media (min-width: $breakpoint-1) {
+  .promo {
+    button {
+      padding: 0.8rem;
+    }
+  }
+}

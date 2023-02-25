@@ -1,14 +1,17 @@
 // components
 import Hero from "../../components/Hero";
+import Promo from "../../components/Promo";
 
 // styles
 import "./Home.scss";
+
+// img
 import HeroBg2 from "../../assets/bg2.jpg";
+import PromoSrc from "../../assets/gamebg.jpg";
 
 export default function Home() {
   return (
     <div className='home-page container'>
-      <h1>HOME PAGE</h1>
       <Hero
         src={HeroBg2}
         message='“In a dark place we find ourselves and a little more knowledge lights our way.”'
@@ -26,6 +29,8 @@ export default function Home() {
         ready to dive into the action-packed world of Star Wars with our
         React-powered Clone Wars page!
       </p>
+
+      <Promo src={PromoSrc} />
     </div>
   );
 }
