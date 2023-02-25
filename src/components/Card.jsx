@@ -13,6 +13,8 @@ export default function Card({ src, title }) {
           distinctio quae ipsum eaque, explicabo totam sunt, error voluptates
           impedit ipsam.
         </p>
+
+        <div className='card-indent'></div>
       </div>
     </div>
   );

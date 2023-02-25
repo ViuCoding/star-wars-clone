@@ -2,16 +2,17 @@
 
 .card {
   margin-bottom: 2rem;
+  position: relative;
   .card-thumbnail {
     min-height: 200px;
-    border-radius: 20px 20px 0 0;
+    border-radius: 10px 10px 0 0;
   }
 
   .card-text-content {
     display: none;
     background-color: $secondary;
     padding: 2rem;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 10px 10px;
 
     h4 {
       font-weight: 300;
@@ -19,6 +20,17 @@
     }
     p {
       font-weight: 200;
+    }
+
+    .card-indent {
+      position: absolute;
+      bottom: 0;
+      background-color: $primary;
+      padding: 0.5rem;
+      border-radius: 5px 5px 0 0;
+      width: 6rem;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }
@@ -42,12 +54,16 @@
 
     .card-thumbnail {
       width: 50%;
-      border-radius: 20px 0 0 20px;
+      border-radius: 10px 0 0 10px;
     }
 
     .card-text-content {
       width: 50%;
-      border-radius: 0 20px 20px 0;
+      border-radius: 0 10px 10px 0;
+
+      .card-indent {
+        left: 75%;
+      }
     }
   }
 }
