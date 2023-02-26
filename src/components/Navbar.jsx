@@ -10,7 +10,6 @@ export default function Navbar() {
       <nav className='navbar'>
         <div className='navbar-logo-container container'>
           <img src={MainLogo} alt='Star Wars Logo' className='navbar-logo' />
-
         </div>
 
         <div className='navbar-menu'>
@@ -19,6 +18,12 @@ export default function Navbar() {
           </NavLink>
           <NavLink to='starships' className='nav-link'>
             STARSHIPS
+          </NavLink>
+          <NavLink to='signup' className='nav-link'>
+            SIGN UP
+          </NavLink>
+          <NavLink to='login' className='nav-link'>
+            LOG IN
           </NavLink>
         </div>
       </nav>

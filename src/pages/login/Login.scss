@@ -1,0 +1,50 @@
+@import "../../variables";
+
+.login-page {
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .login-form {
+    margin-bottom: 2rem;
+    label,
+    input {
+      display: block;
+      font-weight: 200;
+      margin-bottom: 1rem;
+    }
+
+    input {
+      width: 100%;
+      border: none;
+      background-color: $secondary;
+      color: $accent;
+      padding: 0.8rem;
+    }
+
+    button {
+      margin: 2rem auto;
+    }
+  }
+
+  .image-container {
+    text-align: center;
+    img {
+      max-width: 121px;
+    }
+  }
+}
+
+// MEDIA QUERIES
+
+@media (min-width: $breakpoint-3) {
+  .login-page {
+    .login-form {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+}

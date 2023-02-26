@@ -38,6 +38,14 @@ body {
   font-family: "Poppins", Inter, Avenir, Helvetica, Arial, sans-serif;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px $secondary inset !important;
+  -webkit-text-fill-color: limegreen;
+}
+
 // UTILITY
 // UTILITY
 // UTILITY
@@ -51,12 +59,13 @@ body {
 .btn {
   display: block;
   margin: 0 auto;
-  padding: 1rem;
-  font-weight: 600;
+  padding: .6rem 1.5rem;
+  font-weight: 500;
+  font-family: inherit;
   background-color: transparent;
   color: $white;
   border-radius: 30px;
-  border: 2px solid $accent;
+  border: 2px solid $accent2;
 
   &:active {
     transform: scale(0.98);
