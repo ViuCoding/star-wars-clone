@@ -1,26 +1,26 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
 
-// firebase
-import { createUserWithEmailAndPassword } from "@firebase/auth";
+//firebase
 import { auth } from "../firebase/config";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useUserContext } from "./useUserContext";
+import { useNavigate } from "react-router-dom";
 
-export const useSignup = () => {
+export const useLogin = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
-  const navigate = useNavigate();
-
-  // context
   const { dispatch } = useUserContext();
 
-  const signup = (email, password) => {
-    setError(null);
+  const navigate = useNavigate();
+
+  const login = (email, password) => {
     setSuccess(null);
-    createUserWithEmailAndPassword(auth, email, password)
+    setError(null);
+
+    signInWithEmailAndPassword(auth, email, password)
       .then(userCredentials => {
         dispatch({ type: "LOGIN", payload: userCredentials.user });
-        setSuccess("User signed up!");
+        setSuccess("User logged in!");
 
         setTimeout(() => {
           navigate("/");
@@ -31,5 +31,5 @@ export const useSignup = () => {
       });
   };
 
-  return { signup, error, success };
+  return { login, error, success };
 };

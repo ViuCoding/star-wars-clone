@@ -12,7 +12,7 @@ export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { signup, error } = useSignup();
+  const { signup, error, success } = useSignup();
 
   // functions
   const handleSubmit = e => {
@@ -46,11 +46,18 @@ export default function Signup() {
             onChange={e => setPassword(e.target.value)}
           />
         </label>
-        <div className='error-container'>{error && <p>{error}</p>}</div>
+
+        {/* ERROR */}
+        <div className='error-container' style={{ color: "crimson" }}>
+          {error && <p>{error}</p>}
+        </div>
+        {/* SUCCESS */}
+        <div className='success-container' style={{ color: "limegreen" }}>
+          {success && <p>{success}</p>}
+        </div>
 
         <button className='btn'>SIGN UP</button>
       </form>
-      {/* ERROR */}
       <div className='image-container'>
         <img src={Factions} alt='' />
       </div>
