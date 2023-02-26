@@ -15,7 +15,6 @@
   position: absolute;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 1));
   font-weight: 200;
-  font-size: 1.5rem;
   text-align: left;
   font-style: italic;
   top: 0;
@@ -27,9 +26,8 @@
   padding-right: 1rem;
 
   .overlay-content {
-    color: $white;
-
     .content-message {
+      color: $white;
       display: none;
       font-size: 1rem;
       font-weight: 200;
@@ -52,7 +50,7 @@
     .overlay-content {
       .content-message {
         display: block;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
       }
 
       .content-text {
