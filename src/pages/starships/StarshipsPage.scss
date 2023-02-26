@@ -1,0 +1,26 @@
+@import "../../variables";
+
+.no-user {
+  text-align: center;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+  .image-container {
+    img {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  .redirects {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
+  a {
+    margin: 0 auto;
+    width: 60%;
+    padding: 0.6rem 1.5rem;
+    border: 2px solid $accent;
+  }
+}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLogin } from "../../hooks/useLogin";
 
 // styles
 import "./Login.scss";
@@ -10,11 +11,12 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { login, error, success } = useLogin();
+
   // functions
   const handleSubmit = e => {
     e.preventDefault();
-
-    console.log(email, password);
+    login(email, password);
   };
   return (
     <div className='login-page container'>
@@ -43,6 +45,15 @@ export default function Login() {
             onChange={e => setPassword(e.target.value)}
           />
         </label>
+
+        {/* ERROR */}
+        <div className='error-container' style={{ color: "crimson" }}>
+          {error && <p>{error}</p>}
+        </div>
+        {/* SUCCESS */}
+        <div className='success-container' style={{ color: "limegreen" }}>
+          {success && <p>{success}</p>}
+        </div>
 
         <button className='btn'>LOG IN</button>
       </form>

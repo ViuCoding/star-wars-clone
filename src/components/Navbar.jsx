@@ -3,8 +3,14 @@ import { Link, NavLink } from "react-router-dom";
 //styles
 import "./Navbar.scss";
 import MainLogo from "../assets/SWlogo.png";
+import { useUserContext } from "../hooks/useUserContext";
+import { useLogout } from "../hooks/useLogout";
 
 export default function Navbar() {
+  const { user } = useUserContext();
+
+  const { logout } = useLogout();
+
   return (
     <header>
       <nav className='navbar'>
@@ -22,9 +28,15 @@ export default function Navbar() {
           <NavLink to='signup' className='nav-link'>
             SIGN UP
           </NavLink>
-          <NavLink to='login' className='nav-link'>
-            LOG IN
-          </NavLink>
+          {user ? (
+            <Link className='nav-link' onClick={() => logout()}>
+              LOG OUT
+            </Link>
+          ) : (
+            <NavLink to='login' className='nav-link'>
+              LOG IN
+            </NavLink>
+          )}
         </div>
       </nav>
     </header>
