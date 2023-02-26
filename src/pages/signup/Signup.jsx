@@ -5,23 +5,24 @@ import "./Signup.scss";
 
 // images
 import Factions from "../../assets/factions.png";
+import { useSignup } from "../../hooks/useSignup";
 
 export default function Signup() {
   // state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { signup, error } = useSignup();
+
   // functions
   const handleSubmit = e => {
     e.preventDefault();
-
-    console.log(email, password);
+    signup(email, password);
   };
 
   return (
     <div className='signup-page container'>
       <h1>Empire or Rebellion ?</h1>
-
       <form className='signup-form' onSubmit={handleSubmit}>
         <label htmlFor='email'>
           Email
@@ -45,10 +46,11 @@ export default function Signup() {
             onChange={e => setPassword(e.target.value)}
           />
         </label>
+        <div className='error-container'>{error && <p>{error}</p>}</div>
 
         <button className='btn'>SIGN UP</button>
       </form>
-
+      {/* ERROR */}
       <div className='image-container'>
         <img src={Factions} alt='' />
       </div>
