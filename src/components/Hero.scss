@@ -50,7 +50,22 @@
     .overlay-content {
       .content-message {
         display: block;
-        font-size: 1.3rem;
+        font-size: 1rem;
+      }
+
+      .content-text {
+        display: block;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+@media (min-width: $breakpoint-2) {
+  .overlay {
+    .overlay-content {
+      .content-message {
+        display: block;
+        font-size: 1.4rem;
       }
 
       .content-text {
@@ -60,7 +75,7 @@
     }
   }
 }
-@media (min-width: $breakpoint-2) {
+@media (min-width: $breakpoint-3) {
   .overlay {
     .overlay-content {
       .content-message {
