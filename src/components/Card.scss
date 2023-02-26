@@ -9,7 +9,6 @@
   }
 
   .card-text-content {
-    display: none;
     background-color: $secondary;
     padding: 2rem;
     border-radius: 0 0 10px 10px;
@@ -41,10 +40,6 @@
   .card {
     .card-thumbnail {
       min-height: 350px;
-    }
-
-    .card-text-content {
-      display: block;
     }
   }
 }

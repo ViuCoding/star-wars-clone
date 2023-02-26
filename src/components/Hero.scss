@@ -30,11 +30,13 @@
     color: $white;
 
     .content-message {
+      display: none;
       font-size: 1rem;
       font-weight: 200;
     }
 
     .content-text {
+      display: none;
       color: $accent2;
       font-size: 0.8rem;
 
@@ -45,11 +47,26 @@
 
 // MEDIA QUERIES
 
+@media (min-width: $breakpoint-1) {
+  .overlay {
+    .overlay-content {
+      .content-message {
+        display: block;
+        font-size: 1.5rem;
+      }
+
+      .content-text {
+        display: block;
+        font-size: 1rem;
+      }
+    }
+  }
+}
 @media (min-width: $breakpoint-2) {
   .overlay {
     .overlay-content {
       .content-message {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
 
       .content-text {

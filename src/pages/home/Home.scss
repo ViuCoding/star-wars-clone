@@ -2,6 +2,7 @@
 
 .home-page {
   .home-page-text {
+    text-align: justify;
     font-weight: 200;
     font-size: 0.9rem;
     margin-bottom: 1rem;
@@ -20,6 +21,14 @@
   .home-page {
     .home-page-text {
       font-size: 1rem;
+    }
+  }
+}
+@media (min-width: $breakpoint-2) {
+  .home-page {
+    .home-page-text {
+      column-count: 2;
+      gap: 2rem;
     }
   }
 }
