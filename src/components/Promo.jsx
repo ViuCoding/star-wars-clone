@@ -1,11 +1,11 @@
 // styles
 import "./Promo.scss";
 
-export default function Promo({ src }) {
+export default function Promo({ src, isGame }) {
   return (
     <div className='promo container'>
       <img src={src} alt='Promotional image' />
-      <button>GET THE GAME</button>
+      {isGame && <button>GET THE GAME</button>}
     </div>
   );
 }

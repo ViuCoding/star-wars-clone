@@ -23,15 +23,12 @@ header {
 
       .nav-link {
         padding: 0.5rem;
-        font-size: 1.2rem;
+        font-size: 0.7rem;
         font-weight: 200;
+        border-left: 1px solid $secondary;
 
-        &:first-child {
-          border-left: 1px solid $secondary;
-        }
         &:last-child {
           border-right: 1px solid $secondary;
-          border-left: 1px solid $secondary;
         }
 
         &.nav-link.active {
@@ -39,5 +36,13 @@ header {
         }
       }
     }
+  }
+}
+
+// MEDIA QUERIES
+
+@media (min-width: $breakpoint-1) {
+  header .navbar .navbar-menu .nav-link {
+    font-size: 1.33rem;
   }
 }
