@@ -5,10 +5,23 @@ import defaultSrc from "../../assets/placeholder.jpg";
 // styles
 import "./StarshipDetails.scss";
 
+// images
+import LogoYellow from "../../assets/SWlogoYellow.png";
+
 // components
 import LoadingSpinner from "../../components/LoadingSpinner";
+import Redirect from "../../components/Redirect";
+
+// context
+import { useUserContext } from "../../hooks/useUserContext";
 
 export default function StarshipDetails() {
+  const { user } = useUserContext();
+
+  if (!user) {
+    return <Redirect src={LogoYellow} />;
+  }
+
   const { id } = useParams();
   const {
     data: ship,
