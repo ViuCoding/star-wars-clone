@@ -6,6 +6,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+// context
+import { useUserContext } from "./hooks/useUserContext";
+
 // layouts
 import RootLayout from "./layouts/RootLayout";
 import StarshipsLayout from "./layouts/StarshipsLayout";
@@ -35,7 +38,8 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  return <RouterProvider router={router} />;
+  const { authIsReady } = useUserContext();
+  return <>{authIsReady && <RouterProvider router={router} />}</>;
 }
 
 export default App;
