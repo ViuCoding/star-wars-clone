@@ -20,7 +20,7 @@ export default function Signup() {
 
   return (
     <div className='signup-page container'>
-      <h1>Empire or Rebellion?</h1>
+      <h1>Empire or Rebellion ?</h1>
 
       <form className='signup-form' onSubmit={handleSubmit}>
         <label htmlFor='email'>
