@@ -22,8 +22,9 @@ header {
       justify-content: center;
 
       .nav-link {
-        padding: .5rem;
-        font-size: 1.3rem;
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: 200;
 
         &:first-child {
           border-left: 1px solid $secondary;

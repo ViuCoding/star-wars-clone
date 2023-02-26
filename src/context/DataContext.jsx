@@ -36,26 +36,21 @@ export default function DataProvider({ children }) {
   const [state, dispatch] = useReducer(dataReducer, {
     starships: [],
     starshipsPage: 1,
-    loadingAPI: false,
   });
 
   // functions
   function fetchStarships(URL) {
-    state.loadingAPI = true;
     axios
       .get(URL)
       .then(res => {
         if (state.starshipsPage === 1) {
           dispatch({ type: "FETCH_SHIPS", payload: res.data.results });
-          state.loadingAPI = false;
         } else {
           dispatch({ type: "MORE_SHIPS", payload: res.data.results });
-          state.loadingAPI = false;
         }
       })
       .catch(err => {
         console.log(err.message);
-        state.loadingAPI = false;
       });
   }
 
