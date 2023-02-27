@@ -23,7 +23,7 @@ export const useLogin = () => {
         setSuccess("User logged in!");
 
         setTimeout(() => {
-          navigate("/");
+          navigate("/starships");
         }, 1000);
       })
       .catch(err => {

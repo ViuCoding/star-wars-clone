@@ -25,9 +25,12 @@ export default function Navbar() {
           <NavLink to='starships' className='nav-link'>
             STARSHIPS
           </NavLink>
-          <NavLink to='signup' className='nav-link'>
-            SIGN UP
-          </NavLink>
+          {user ? null : (
+            <NavLink to='signup' className='nav-link'>
+              SIGN UP
+            </NavLink>
+          )}
+
           {user ? (
             <Link className='nav-link' onClick={() => logout()}>
               LOG OUT

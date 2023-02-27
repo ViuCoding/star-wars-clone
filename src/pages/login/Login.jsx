@@ -1,12 +1,23 @@
 import { useState } from "react";
 import { useLogin } from "../../hooks/useLogin";
 
+// context
+import { useUserContext } from "../../hooks/useUserContext";
+
 // styles
 import "./Login.scss";
 
 // images
 import YingYang from "../../assets/yingyangSW.png";
+import { Navigate } from "react-router-dom";
+
 export default function Login() {
+  const { user } = useUserContext();
+
+  if (user) {
+    return <Navigate to='/' replace />;
+  }
+
   // state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

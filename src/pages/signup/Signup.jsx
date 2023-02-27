@@ -1,13 +1,23 @@
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
+import { useSignup } from "../../hooks/useSignup";
+
+// context
+import { useUserContext } from "../../hooks/useUserContext";
 
 // styles
 import "./Signup.scss";
 
 // images
 import Factions from "../../assets/factions.png";
-import { useSignup } from "../../hooks/useSignup";
 
 export default function Signup() {
+  const { user } = useUserContext();
+
+  if (user) {
+    return <Navigate to='/' replace />;
+  }
+
   // state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

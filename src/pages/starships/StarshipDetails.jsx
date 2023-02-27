@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import defaultSrc from "../../assets/placeholder.jpg";
 
@@ -6,11 +6,9 @@ import defaultSrc from "../../assets/placeholder.jpg";
 import "./StarshipDetails.scss";
 
 // images
-import LogoYellow from "../../assets/SWlogoYellow.png";
 
 // components
 import LoadingSpinner from "../../components/LoadingSpinner";
-import Redirect from "../../components/Redirect";
 
 // context
 import { useUserContext } from "../../hooks/useUserContext";
@@ -19,7 +17,7 @@ export default function StarshipDetails() {
   const { user } = useUserContext();
 
   if (!user) {
-    return <Redirect src={LogoYellow} />;
+    return <Navigate to='/login' replace />;
   }
 
   const { id } = useParams();
@@ -29,7 +27,10 @@ export default function StarshipDetails() {
     loading,
   } = useFetch(`https://swapi.dev/api/starships/${id}`);
 
+  // set the ship image on page load
   let shipSrc = `https://starwars-visualguide.com/assets/img/starships/${id}.jpg`;
+
+  // onError => if the image is not available we use a fallback image store locally
 
   return (
     <div className='starship-details container'>
@@ -63,7 +64,8 @@ export default function StarshipDetails() {
             <p>
               <span className='category'>COST</span>
               <span className='value'>
-                {Number(ship.cost_in_credits).toLocaleString() ?? "unknown"} ₹
+                {`${Number(ship.cost_in_credits).toLocaleString()} ₹` ??
+                  "unknown"}
               </span>
             </p>
             <p>
@@ -80,12 +82,14 @@ export default function StarshipDetails() {
             </p>
             <p>
               <span className='category'>LENGTH</span>
-              <span className='value'>{ship.length ?? "unknown"} meters</span>
+              <span className='value'>
+                {`${ship.length} meters` ?? "unknown"}
+              </span>
             </p>
             <p>
               <span className='category'>MAX ATMOSPHERING SPEED</span>
               <span className='value'>
-                {ship.max_atmosphering_speed ?? "unknown"} km/h
+                {`${ship.max_atmosphering_speed} km/H` ?? "unknown"}
               </span>
             </p>
             <p>
@@ -96,7 +100,7 @@ export default function StarshipDetails() {
             </p>
             <p>
               <span className='category'>MAX SPEED IN SPACE</span>
-              <span className='value'>{ship.MGLT ?? "unknown"} MGLT</span>
+              <span className='value'>{`${ship.MGLT} MGLT` ?? "unknown"}</span>
             </p>
           </div>
         </>
