@@ -14,6 +14,8 @@ export default function Movies({ films }) {
         data.map(movie => {
           return <p key={movie.title}>{movie.title}</p>;
         })}
+
+      {error && <p>{error}</p>}
     </div>
   );
 }

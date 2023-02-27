@@ -13,6 +13,8 @@ export default function Pilots({ pilots }) {
         data.map(pilot => {
           return <p key={pilot.name}>{pilot.name}</p>;
         })}
+
+      {error && <p>{error}</p>}
     </div>
   );
 }
