@@ -22,7 +22,7 @@ export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { signup, error, success } = useSignup();
+  const { signup, error } = useSignup();
 
   // functions
   const handleSubmit = e => {
@@ -60,10 +60,6 @@ export default function Signup() {
         {/* ERROR */}
         <div className='error-container' style={{ color: "crimson" }}>
           {error && <p>{error}</p>}
-        </div>
-        {/* SUCCESS */}
-        <div className='success-container' style={{ color: "limegreen" }}>
-          {success && <p>{success}</p>}
         </div>
 
         <button className='btn'>SIGN UP</button>
