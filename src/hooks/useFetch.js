@@ -7,22 +7,39 @@ export default function useFetch(URL) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  function getShip() {
+  function callAPI() {
     setLoading(true);
-    axios
-      .get(URL)
-      .then(res => {
-        setData(res.data);
-        setLoading(false);
-      })
-      .catch(err => {
-        setError(err.message);
-        setLoading(false);
-      });
+
+    if (typeof URL === "string") {
+      axios
+        .get(URL)
+        .then(res => {
+          setData(res.data);
+          setLoading(false);
+        })
+        .catch(err => {
+          setError(err.message);
+          setLoading(false);
+        });
+    }
+
+    if (typeof URL === "object") {
+      axios
+        .all(URL.map(endpoint => axios.get(endpoint)))
+        .then(results => {
+          let resultsArray = results.map(r => r.data);
+          setData(resultsArray);
+          setLoading(false);
+        })
+        .catch(err => {
+          setError(err.message);
+          setLoading(false);
+        });
+    }
   }
 
   useEffect(() => {
-    getShip();
+    callAPI();
   }, [URL]);
 
   return { data, error, loading };

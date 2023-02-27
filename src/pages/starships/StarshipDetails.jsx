@@ -9,6 +9,8 @@ import "./StarshipDetails.scss";
 
 // components
 import LoadingSpinner from "../../components/LoadingSpinner";
+import Movies from "../../components/Movies";
+import Pilots from "../../components/Pilots";
 
 // context
 import { useUserContext } from "../../hooks/useUserContext";
@@ -20,7 +22,10 @@ export default function StarshipDetails() {
     return <Navigate to='/login' replace />;
   }
 
+  // extracting the ship id from route param passed from the ShipList
   const { id } = useParams();
+
+  // we fetch the ship details by callin the custom hook useFetch and passing the url + the id previously extracted
   const {
     data: ship,
     error,
@@ -102,9 +107,27 @@ export default function StarshipDetails() {
               <span className='category'>MAX SPEED IN SPACE</span>
               <span className='value'>{`${ship.MGLT} MGLT` ?? "unknown"}</span>
             </p>
+
+            {/* PILOTS */}
+            {ship.pilots.length > 0 && (
+              <>
+                <h2>PILOTS</h2>
+                <Pilots pilots={ship.pilots} />
+              </>
+            )}
+
+            {/* MOVIES */}
+            {ship.films.length > 0 && (
+              <>
+                <h2>MOVIES</h2>
+                <Movies films={ship.films} />
+              </>
+            )}
           </div>
         </>
       )}
+
+      {error && <p>{error}</p>}
     </div>
   );
 }

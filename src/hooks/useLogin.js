@@ -9,9 +9,7 @@ export const useLogin = () => {
   const [error, setError] = useState(null);
   const { dispatch } = useUserContext();
 
-
   const login = (email, password) => {
-    setSuccess(null);
     setError(null);
 
     signInWithEmailAndPassword(auth, email, password)
@@ -24,5 +22,5 @@ export const useLogin = () => {
       });
   };
 
-  return { login, error, success };
+  return { login, error };
 };

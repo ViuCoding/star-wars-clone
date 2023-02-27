@@ -13,7 +13,6 @@ export const useSignup = () => {
 
   const signup = (email, password) => {
     setError(null);
-    setSuccess(null);
     createUserWithEmailAndPassword(auth, email, password)
       .then(userCredentials => {
         dispatch({ type: "LOGIN", payload: userCredentials.user });
