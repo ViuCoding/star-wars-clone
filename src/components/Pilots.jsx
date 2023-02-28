@@ -8,6 +8,7 @@ export default function Pilots({ pilots }) {
 
   return (
     <div className='pilots'>
+      <h2>PILOTS</h2>
       {loading && <LoadingSpinner />}
       {data &&
         data.map(pilot => {

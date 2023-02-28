@@ -43,7 +43,7 @@ export default function StarshipDetails() {
       {ship && (
         <>
           <div className='starship-card'>
-            <div className='starship-card-container'>
+            <div className='starship-img-container'>
               <img
                 src={shipSrc}
                 onError={e => {
@@ -54,75 +54,87 @@ export default function StarshipDetails() {
               />
             </div>
             <h1 className='starship-name'>{ship.name}</h1>
-            <p>
-              <span className='category'>MODEL</span>
-              <span className='value'>{ship.model ?? "unknown"}</span>
-            </p>
-            <p>
-              <span className='category'>CLASS</span>
-              <span className='value'>{ship.starship_class ?? "unknown"}</span>
-            </p>
-            <p>
-              <span className='category'>MANUFACTURER</span>
-              <span className='value'>{ship.manufacturer ?? "unknown"}</span>
-            </p>
-            <p>
-              <span className='category'>COST</span>
-              <span className='value'>
-                {`${Number(ship.cost_in_credits).toLocaleString()} ₹` ??
-                  "unknown"}
-              </span>
-            </p>
-            <p>
-              <span className='category'>CREW</span>
-              <span className='value'>{ship.crew ?? "unknown"}</span>
-            </p>
-            <p>
-              <span className='category'>PASSENGER CAPACITY</span>
-              <span className='value'>{ship.passenger ?? "unknown"}</span>
-            </p>
-            <p>
-              <span className='category'>CONSUMABLES</span>
-              <span className='value'>{ship.consumables ?? "unknown"}</span>
-            </p>
-            <p>
-              <span className='category'>LENGTH</span>
-              <span className='value'>
-                {`${ship.length} meters` ?? "unknown"}
-              </span>
-            </p>
-            <p>
-              <span className='category'>MAX ATMOSPHERING SPEED</span>
-              <span className='value'>
-                {`${ship.max_atmosphering_speed} km/H` ?? "unknown"}
-              </span>
-            </p>
-            <p>
-              <span className='category'>HYPERDRIVE RATING</span>
-              <span className='value'>
-                {ship.hyperdrive_rating ?? "unknown"}
-              </span>
-            </p>
-            <p>
-              <span className='category'>MAX SPEED IN SPACE</span>
-              <span className='value'>{`${ship.MGLT} MGLT` ?? "unknown"}</span>
-            </p>
 
-            {/* PILOTS */}
-            {ship.pilots.length > 0 && (
-              <>
-                <h2>PILOTS</h2>
-                <Pilots pilots={ship.pilots} />
-              </>
-            )}
+            <div className='starship-features-flex'>
+              <div className='feature-container1'>
+                <h2>STARSHIP FEATURES</h2>
+                <p>
+                  <span className='category'>MODEL</span>
+                  <span className='value'>{ship.model ?? "unknown"}</span>
+                </p>
+                <p>
+                  <span className='category'>CLASS</span>
+                  <span className='value'>
+                    {ship.starship_class ?? "unknown"}
+                  </span>
+                </p>
+                <p>
+                  <span className='category'>MANUFACTURER</span>
+                  <span className='value'>
+                    {ship.manufacturer ?? "unknown"}
+                  </span>
+                </p>
+                <p>
+                  <span className='category'>COST</span>
+                  <span className='value'>
+                    {`${Number(ship.cost_in_credits).toLocaleString()} ₹` ??
+                      "unknown"}
+                  </span>
+                </p>
+                <p>
+                  <span className='category'>CREW</span>
+                  <span className='value'>{ship.crew ?? "unknown"}</span>
+                </p>
+                <p>
+                  <span className='category'>PASSENGER CAPACITY</span>
+                  <span className='value'>{ship.passenger ?? "unknown"}</span>
+                </p>
+                <p>
+                  <span className='category'>CONSUMABLES</span>
+                  <span className='value'>{ship.consumables ?? "unknown"}</span>
+                </p>
+                <p>
+                  <span className='category'>LENGTH</span>
+                  <span className='value'>
+                    {`${ship.length} meters` ?? "unknown"}
+                  </span>
+                </p>
+                <p>
+                  <span className='category'>MAX ATMOSPHERING SPEED</span>
+                  <span className='value'>
+                    {`${ship.max_atmosphering_speed} km/H` ?? "unknown"}
+                  </span>
+                </p>
+                <p>
+                  <span className='category'>HYPERDRIVE RATING</span>
+                  <span className='value'>
+                    {ship.hyperdrive_rating ?? "unknown"}
+                  </span>
+                </p>
+                <p>
+                  <span className='category'>MAX SPEED IN SPACE</span>
+                  <span className='value'>
+                    {`${ship.MGLT} MGLT` ?? "unknown"}
+                  </span>
+                </p>
+              </div>
 
-            {/* MOVIES */}
-            {ship.films.length > 0 && (
-              <>
-                <h2>MOVIES</h2>
-                <Movies films={ship.films} />
-              </>
-            )}
+              <div className='feature-container2'>
+                {/* PILOTS */}
+                {ship.pilots.length > 0 && (
+                  <>
+                    <Pilots pilots={ship.pilots} />
+                  </>
+                )}
+
+                {/* MOVIES */}
+                {ship.films.length > 0 && (
+                  <>
+                    <Movies films={ship.films} />
+                  </>
+                )}
+              </div>
+            </div>
           </div>
         </>
       )}

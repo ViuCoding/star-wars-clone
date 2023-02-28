@@ -9,6 +9,7 @@ export default function Movies({ films }) {
 
   return (
     <div className='movies'>
+      <h2>MOVIES</h2>
       {loading && <LoadingSpinner />}
       {data &&
         data.map(movie => {
