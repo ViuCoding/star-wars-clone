@@ -34,7 +34,7 @@ export default function Home() {
         React-powered Clone Wars page!
       </p>
 
-      <Promo src={PromoSrc} />
+      <Promo src={PromoSrc} isGame={true} />
 
       <h3 className='section-title'>More CloneWars Content</h3>
 
