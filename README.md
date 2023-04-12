@@ -1,6 +1,6 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 
-<a name="readme-top"></a>
+<a id="readme-top"></a>
 
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
@@ -24,13 +24,6 @@
 </div>
 
 <h3 align="center">Star Wars Clone</h3>
-
-  <p align="left">
-    This project is based on a tech interview for a large e-commerce company that is looking for devs in Barcelona. The main task: consuming data from an API, displaying it on a screen through a list, and implementing each item on the list in detail.
-
-The website must display a list of Star Wars ships with detailed information about each one of them. <br />
-
-In order to access the starships page the user must be authenticated through Firebase. <a href="https://clone-wars.netlify.app/">View Demo</a>
 
   </p>
 </div>
@@ -65,55 +58,46 @@ In order to access the starships page the user must be authenticated through Fir
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+  <p align="left">
+    This project is based on a tech interview for a large e-commerce company that is looking for devs in Barcelona. The main task: consuming data from an API, displaying it on a screen through a list, and implementing each item on the list in detail.
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+The website must display a list of Star Wars ships with detailed information about each one of them.
+
+In order to access the starships page the user must be authenticated through Firebase. <br /><br /><a href="https://clone-wars.netlify.app/">View Demo</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-- [![Next][next.js]][next-url]
-- [![React][react.js]][react-url]
-- [![Vue][vue.js]][vue-url]
-- [![Angular][angular.io]][angular-url]
-- [![Svelte][svelte.dev]][svelte-url]
-- [![Laravel][laravel.com]][laravel-url]
-- [![Bootstrap][bootstrap.com]][bootstrap-url]
-- [![JQuery][jquery.com]][jquery-url]
+- <img  src="https://img.shields.io/badge/Sass-CC6699?style=plastic&logo=sass&logoColor=white" alt="Logo" width="60" >
+- <img src="https://img.shields.io/badge/React-20232A?style=plastic&logo=react&logoColor=61DAF" alt=" Logo" width="70">
+- <img src="https://img.shields.io/badge/React_Router-CA4245?style=plastic&logo=react-router&logoColor=white" alt=" Logo" width="114"> <br/>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally. To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = "ENTER YOUR API";
-   ```
+1. Clone the repo
+
+```sh
+   git clone https://github.com/ViuCoding/star-wars-clone.git
+```
+
+2.  Install NPM packages
+
+```sh
+npm install
+```
+
+This will install the necessary dependencies to run the program.
+
+3. Launch a local server:
+
+```sh
+  npm run dev
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -214,5 +198,6 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [laravel-url]: https://laravel.com
 [bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [bootstrap-url]: https://getbootstrap.com
+[sass-url]: https://sass-lang.com/
 [jquery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [jquery-url]: https://jquery.com
