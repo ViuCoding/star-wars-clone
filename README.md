@@ -10,10 +10,6 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
-<!-- PROJECT SHIELDS -->
-
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 <!-- PROJECT LOGO -->
 <br />
 <div>
